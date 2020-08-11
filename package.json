@@ -1,0 +1,24 @@
+{
+  "name": "testdirectory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amazon-cognito-identity-js": "^4.3.3",
+    "body-parser": "^1.19.0",
+    "circular-json": "^0.5.9",
+    "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "jsdom": "^16.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwk-to-pem": "^2.0.4",
+    "node-fetch": "^2.6.0",
+    "nodemon": "^2.0.4",
+    "request": "^2.88.2"
+  }
+}
