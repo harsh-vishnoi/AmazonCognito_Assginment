@@ -17,7 +17,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/signUp', function (req, res) {
-  res.sendFile(__dirname + '/Src/signup.html');
+    res.sendFile(__dirname + '/Src/signup.html');
 });
 
 router.post('/signUp', function (req, res) {

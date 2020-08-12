@@ -49,5 +49,16 @@
       <br><br><Text>Nginx Logs will Come here .....</Text>
     </center>
 
+    <Text id="Logs"></Text>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+       var socket = io();
+       socket.on('message', function(data){
+         console.log(data);
+         document.getElementById("Logs").innerHTML = data;
+       });
+    </script>
+
   </body>
 </html>
