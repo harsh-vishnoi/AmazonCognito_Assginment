@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
     <meta charset="utf-8">
     <title></title>
   </head>
@@ -49,14 +50,14 @@
       <br><br><Text>Nginx Logs will Come here .....</Text>
     </center>
 
-    <Text id="Logs"></Text>
+    <br><br><Li id="Logs"></Li>
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
        var socket = io();
        socket.on('message', function(data){
          console.log(data);
-         document.getElementById("Logs").innerHTML = data;
+         $("#Logs").append("<li>" + data + "</li>")
        });
     </script>
 

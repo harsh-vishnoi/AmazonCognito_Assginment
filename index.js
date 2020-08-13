@@ -5,27 +5,24 @@ const fs = require('fs');
 var jsdom = require('jsdom');
 var $ = require('jquery')(new jsdom.JSDOM().window);
 require('log-timestamp');
+const lineReader = require('line-reader');
 const buttonPressesLogFile = './Src/fileText.txt';
 
 console.log(`Watching for file changes on ${buttonPressesLogFile}`);
+
+// lineReader.eachLine(buttonPressesLogFile, (line, last) => {
+//     console.log(line);
+// });
 
 io.on('connection', function(socket) {
     console.log('Client connected!');
 
     fs.watchFile(buttonPressesLogFile, (curr, prev) => {
-      fs.readFile('./Src/fileText.txt', 'utf8', function (err,data) {
-        if (err) {
-          return console.log(err);
-        }
-        socket.send(data);
-        console.log(data);
+      lineReader.eachLine(buttonPressesLogFile, (line, last) => {
+          socket.send(line);
       });
-      console.log(`${buttonPressesLogFile} file Changed`);
-    });
 
-    socket.on('message', function (data) {
-        console.log('Sending update!');
-        socket.emit('update', 'Working!');
+      console.log(`${buttonPressesLogFile} file Changed`);
     });
 
     socket.on('disconnect', function () {
