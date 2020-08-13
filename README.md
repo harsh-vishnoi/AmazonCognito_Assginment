@@ -15,7 +15,7 @@ I am attaching few screenshot of the project.
 
 # SingUp
 
-![Screenshot](SingUp.png)
+![Screenshot](SignUp.png)
 
 # UserAndGroup
 
