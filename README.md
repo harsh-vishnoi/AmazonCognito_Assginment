@@ -23,4 +23,6 @@ I am attaching few screenshot of the project.
 
 # Logs
 
+Logs can be filter using IP address or TimeStamp. I haven't done assuming it to be a Demo.
+
 ![Screenshot](Logs.png)
